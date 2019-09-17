@@ -1,0 +1,27 @@
+.Body{
+    font-family: 'Arial';
+    color: #777;
+    background: #777;
+    width: 960px;
+    font-size: 18px;
+}
+
+/*Header, Nav, Section, Aside, and Footer*/
+.Structure{
+    background: #ebebeb;
+}
+
+.Article{
+    color: #ebebeb;
+    background: #777;
+}
+
+.Para{
+    color: #777;
+    background: #ebebeb;
+}
+
+.Section{
+    height: 495px;
+    width: 495px;
+}
