@@ -1,6 +1,6 @@
 #bio-image {
-    width: 200px;
-    height: 200px;
+    width: 225px;
+    height: 300px;
     margin-right: 20px;
     float: left;
 }
@@ -13,4 +13,57 @@
 #nav-bar {
     float: right;
     
+}
+/*
+.container {
+    width: 100%;
+    margin: 0 auto;
+    height: 960px;
+}*/
+
+#left {
+    float: right;
+    
+}
+
+#middle {
+    float: right;
+}
+
+#right {
+    float: right;
+}
+
+#nav-bar {
+    float: right;
+}
+
+#headings-font {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+#other-font {
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.backGround{
+    background-image: url("/assets/images/ripples.png");
+    background-repeat: repeat;
+}
+
+h2{
+    background-color: #4aaaa5;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+
+#about-me{
+    background-color: #4aaaa5;
+    margin: 10%;
+    padding: 15%;
+    text-align: center;
+    float: left;
 }
