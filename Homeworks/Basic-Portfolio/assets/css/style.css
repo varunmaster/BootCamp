@@ -1,0 +1,16 @@
+#bio-image {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    float: left;
+}
+  
+#main-bio {
+    float: left;
+    width: 70%;
+}
+
+#nav-bar {
+    float: right;
+    /*width: 70%;*/
+}
