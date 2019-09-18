@@ -49,14 +49,15 @@
     color: #ffffff;
     width: 1000px;
     height: 9%;
-    text-align: left;
+    padding-left: 20%;
     float: left;
 }
 
 #name1{
     background-color: #4aaaa5;
-    width: 50%;
+    width: 15%;
     float: left;
+    text-align: center;
 }
 
 #other-pages {
@@ -64,6 +65,7 @@
     text-align: right;
     width: 50%;
     margin-left: 0;
+    padding-left: 30%;
 }
 
 footer{
