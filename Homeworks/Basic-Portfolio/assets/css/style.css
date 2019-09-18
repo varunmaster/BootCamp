@@ -19,13 +19,6 @@
     width: 960px;
 }
 
-/*
-.container {
-    width: 100%;
-    margin: 0 auto;
-    height: 960px;
-}*/
-
 #left, #middle, #right {
     float: right;
 }
@@ -39,17 +32,17 @@
 }
 
 #backGround{
-    width: 80%;
-    height: 960px;
     margin: 30px;
-    background-color: bisque;
+    background-image: url(../images/ripples.png);
+    background-color: #ffffff;
+    border-color: #dddddd;
 }
 
 #name{
     color: #ffffff;
     width: 1000px;
     height: 9%;
-    padding-left: 20%;
+    padding-left: 16%;
     float: left;
 }
 
@@ -65,11 +58,7 @@
     text-align: right;
     width: 50%;
     margin-left: 0;
-    padding-left: 30%;
-}
-
-footer{
-    text-align: center;
+    padding-left: 32%;
 }
 
 #about-me{
@@ -79,27 +68,11 @@ footer{
     float: clear;
 }
 
-#other-pages{
-    float: left;
-    text-align: right;
-}
-
-/*
-#about-me-box{
-    width: 25%;
-    height: 50%;
-    background-color: #4aaaa5;
-}*/
-
-/*
-footer {
-    float: clear;
-    background: #333;
-  }
-*/
-
 #header{
     width: 100%;
+    border-color: #cccccc;
+    background-color: #ffffff;
+    border: 1px;
 }
 
 li{
@@ -107,6 +80,7 @@ li{
     overflow: auto;
     margin: 0;
     padding-right: 15px;
+    color: #777777;
 }
 
 section{
@@ -115,6 +89,13 @@ section{
 
 footer{
     clear: both;
-    position: ;
-    padding: 30px 0px 30px 0px;
+    background-color: #666666;
+    color: white;
+    height: 30px;
+    width: 960px;
+    margin-left: 225px;
+}
+
+p{
+    color: #777777;
 }
