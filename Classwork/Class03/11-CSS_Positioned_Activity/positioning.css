@@ -1,0 +1,11 @@
+#main{
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.fixed{
+    background-color: #eee;
+    height: 80px;
+    width: 100px;
+
+}
