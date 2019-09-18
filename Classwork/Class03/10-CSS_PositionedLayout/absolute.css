@@ -1,0 +1,39 @@
+/**
+ * Absolute Position: anchors element to the first element (overall box)
+ **/
+
+.box-set {
+  position: relative;
+  height: 400px;
+  background: darkgray;
+}
+
+.box {
+  /* Absolute Position - moves in reference to the parent, in this case its the box-set class */
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #2db34a;
+  border: 2px solid black;
+}
+
+/* Box rules: percentages define anchors (i.e. position of each box relative to enclosing box) */
+
+.box-1 {
+  top: 6%;
+  left: 2%;
+}
+
+.box-2 {
+  top: 0;
+  right: -40px; /*negative number means that box will be moved 40 pixels from center to right*/
+}
+
+.box-3 {
+  right: 20px;
+  bottom: -10px;
+}
+
+.box-4 {
+  bottom: 0;
+}
