@@ -28,10 +28,10 @@ header {
 #sect {
     margin-top: 10px;
     padding: 90px;
-    width: 33%;
+    width: 29%;
     background-color: lightgray;
     margin-left: 7%;
-    margin-right: 5px; /*This is so the aside can be next to it with spacing*/
+    margin-right: 15px; /*This is so the aside can be next to it with spacing*/
     float: left; /*This is for putting aside next to this section*/
     text-align: center;
     height: 200px; /* must match with #side{height:} */
@@ -44,7 +44,7 @@ header {
     width: 119%;
     height: 105%;
     padding: 20px;
-    margin-left: -80px;
+    margin-left: -15%;
 }
 
 #headers {
@@ -68,7 +68,7 @@ header {
 }
 
 #side {
-    width: 31%;
+    width: 29%;
     padding: 90px;
     margin-right: 7%;
     background-color: lightgray;
