@@ -9,6 +9,7 @@
     float: left;
     width: 70%;
     margin: 0 auto;
+    padding-left: 225px;
 }
 
 #bio-box{
@@ -63,9 +64,7 @@ footer{
     text-align: center;
     width: 15%;
     color: #4aaaa5;
-    margin-bottom: 0 auto;
-    padding-bottom: 0 auto;
-    border-bottom: 0 auto;
+    float: clear;
 }
 
 /*
