@@ -1,30 +1,6 @@
-#bio-image {
-    width: 225px;
-    height: 300px;
-    margin: 20px;
-    float: left;
-}
-  
-#main-bio {
-    float: left;
-    width: 70%;
-    margin: 0 auto;
-    padding-left: 225px;
-}
-
-#bio-box{
-    background-color: #ffffff;
-    height: 35%;
-    float: left;
-    width: 960px;
-}
-
-#left, #middle, #right {
-    float: right;
-}
-
-#headings-font {
+p {
     font-family: 'Georgia', Times, "Times New Roman", serif;
+    color: #777777;
 }
 
 #other-font {
@@ -42,8 +18,9 @@
     color: #ffffff;
     width: 1000px;
     height: 9%;
-    padding-left: 16%;
+    /* padding-left: 16%; */
     float: left;
+    margin-left: 25%;
 }
 
 #name1{
@@ -54,21 +31,46 @@
 }
 
 #other-pages {
-    float: left;
+    /* float: left; */
     text-align: right;
     width: 50%;
-    margin-left: 0;
-    padding-left: 32%;
+    /* margin-right: 0; */
+    padding-left: 65%;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+#main-bio {
+    float: left;
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 225px;
+}
+
+#bio-box{
+    background-color: #ffffff;
+    height: 35%;
+    float: left;
+    width: 960px;
+    margin-left: 18%;
 }
 
 #about-me{
+    clear: both;
     text-align: center;
     width: 15%;
     color: #4aaaa5;
-    float: clear;
+}
+
+#bio-image {
+    width: 225px;
+    height: 300px;
+    margin: 20px;
+    float: left;
 }
 
 #header{
+    clear: both;
     width: 100%;
     border-color: #cccccc;
     background-color: #ffffff;
@@ -76,14 +78,11 @@
 }
 
 li{
-    display: inline;
+    /* display: inline; */
     overflow: auto;
     margin: 0;
     padding-right: 15px;
     color: #777777;
-}
-
-section{
     float: left;
 }
 
@@ -93,9 +92,6 @@ footer{
     color: white;
     height: 30px;
     width: 960px;
-    margin-left: 225px;
-}
-
-p{
-    color: #777777;
+    margin-left: 25%; /*This value matches #name{margin-left: 25%;}*/
+    margin-top: 44%;
 }
