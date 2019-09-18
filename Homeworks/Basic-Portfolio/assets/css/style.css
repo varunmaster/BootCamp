@@ -16,6 +16,7 @@
     background-color: #ffffff;
     height: 35%;
     float: left;
+    width: 960px;
 }
 
 /*
@@ -45,15 +46,24 @@
 }
 
 #name{
-    background-color: #4aaaa5;
     color: #ffffff;
-    width: 15%;
+    width: 1000px;
     height: 9%;
-    text-align: center;
+    text-align: left;
+    float: left;
+}
+
+#name1{
+    background-color: #4aaaa5;
+    width: 50%;
+    float: left;
 }
 
 #other-pages {
+    float: left;
     text-align: right;
+    width: 50%;
+    margin-left: 0;
 }
 
 footer{
@@ -65,6 +75,11 @@ footer{
     width: 15%;
     color: #4aaaa5;
     float: clear;
+}
+
+#other-pages{
+    float: left;
+    text-align: right;
 }
 
 /*
@@ -80,3 +95,24 @@ footer {
     background: #333;
   }
 */
+
+#header{
+    width: 100%;
+}
+
+li{
+    display: inline;
+    overflow: auto;
+    margin: 0;
+    padding-right: 15px;
+}
+
+section{
+    float: left;
+}
+
+footer{
+    clear: both;
+    position: ;
+    padding: 30px 0px 30px 0px;
+}
