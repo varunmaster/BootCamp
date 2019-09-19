@@ -1,0 +1,22 @@
+/* a {
+    font-size: 64px;
+} */
+ 
+a:default {
+    background-color: blue;
+}
+
+/* changes the style only while the user clicks down on an element. this style ceases when the user releases their click */
+a:active {
+    background-color: seagreen;
+}
+
+/* changes the style only when mouse hovers over element */
+a:hover {
+    background-color: darkorchid;
+}
+
+/* changes the style only when the browser gives the element focus when it is clicked on */
+a:focus {
+    background-color: aqua;
+}
