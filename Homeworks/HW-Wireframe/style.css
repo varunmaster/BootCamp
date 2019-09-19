@@ -8,7 +8,7 @@ body {
 
 header {
     width: 80%;
-    height: 80px;
+    height: 75%;
     text-align: center;
     margin-left: 7%;
     padding: 30px;
@@ -17,7 +17,7 @@ header {
 
 #nav {
     width: 80%;
-    height: 80px;
+    height: 75%;
     text-align: center;
     margin-top: 10px;
     margin-left: 7%;
@@ -51,9 +51,10 @@ header {
     clear: both;
     background-color: lightgray;
     padding: 20px;
-    width: 95%;
+    width: 93%;
     color: #777;
-    margin-bottom: 1%;
+    margin-top: 5%;
+    margin-bottom: 2%;
     height: 20%;
 }
 
@@ -61,9 +62,10 @@ header {
     clear: both;
     background-color: lightgray;
     padding: 20px;
-    width: 95%;
+    /* margin-top: 5%; */
+    width: 93%;
     color: #777;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
     height: 20%;
 }
 
@@ -82,7 +84,7 @@ header {
 footer {
     clear: both;
     width: 80%;
-    height: 80px;
+    height: 75%;
     text-align: center;
     margin-top: 10px;
     margin-left: 7%;
