@@ -2,92 +2,78 @@ body {
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     color: #777; 
     background-color: #777;
-    width: '960px';
+    width: 960px;
+    margin: 0 auto;
     font-size: 18px;
 }
 
 header {
-    width: 80%;
-    height: 75%;
-    text-align: center;
-    margin-left: 7%;
-    padding: 30px;
+    text-align: center;   
+    padding: 10px 30px;
     background-color: lightgray;
+    margin-top: 10px;
 }
 
-#nav {
-    width: 80%;
-    height: 75%;
+nav {
     text-align: center;
     margin-top: 10px;
-    margin-left: 7%;
-    padding: 30px;
+    padding: 10px 30px;
     background-color: lightgray;
 }
 
 #sect {
     margin-top: 10px;
-    padding: 90px;
-    width: 29%;
-    background-color: lightgray;
-    margin-left: 7%;
-    margin-right: 15px; /*This is so the aside can be next to it with spacing*/
+    width: 58%;
+    background-color: lightgray;   
     float: left; /*This is for putting aside next to this section*/
     text-align: center;
-    height: 200px; /* must match with #side{height:} */
+    height: 350px; /* must match with aside{height:} */
 }
 
-#article {
-    float: left;
+article {
     background-color: #777;
-    color: lightgray;
-    width: 119%;
-    height: 105%;
     padding: 20px;
-    margin-left: -15%;
+    margin: 10px;
 }
 
-#headers {
-    clear: both;
+#art {
+    background-color: transparent;
+    color: #ebebeb;
+}
+
+h1 {
     background-color: lightgray;
-    padding: 20px;
-    width: 93%;
+    padding: 10px;
     color: #777;
-    margin-top: 5%;
     margin-bottom: 2%;
-    height: 20%;
+    font-size: 16px;
 }
 
-#para {
-    clear: both;
+p {
     background-color: lightgray;
-    padding: 20px;
-    /* margin-top: 5%; */
-    width: 93%;
+    padding: 10px;
     color: #777;
     margin-bottom: 10%;
-    height: 20%;
 }
 
-#side {
-    width: 29%;
-    padding: 90px;
-    margin-right: 7%;
+aside {
+    width: 40%;
     background-color: lightgray;
     margin-top: 10px;
     text-align: center;
     margin-bottom:  10px;
-    float: left;
-    height: 200px; /* must match with #sect{height:} */
+    float: right;
+    height: 350px; /* must match with #sect{height:} */
+}
+
+.clearfix {
+    clear: both;
 }
 
 footer {
-    clear: both;
-    width: 80%;
-    height: 75%;
     text-align: center;
     margin-top: 10px;
-    margin-left: 7%;
-    padding: 30px;
+    padding: 10px 30px;
     background-color: lightgray;
+    margin-bottom: 30px;
 }
