@@ -87,9 +87,21 @@
             }else {
                 alert ("YOU DIDN'T PRESS R, P, or S. PLAY THE GAME RIGHT.");
             }
-
-            // console.log
         }
+
+        /* shorter and concise way of above
+        if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+
+        if ((userGuess === "r" && computerGuess === "s") ||
+          (userGuess === "s" && computerGuess === "p") || 
+          (userGuess === "p" && computerGuess === "r")) {
+          wins++;
+        } else if (userGuess === computerGuess) {
+          ties++;
+        } else {
+          losses++;
+        } 
+        */
 
 
 
