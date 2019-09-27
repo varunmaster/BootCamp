@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>This Example</title>
+</head>
+<body>
+
+  <h1>Make sure to view the console to see the action!</h1>
+
+  <script type="text/javascript">
+
+    // EXAMPLE ONE:
+    // --------------------------------------------------
+    // What is "this" going to print?
+
+    console.log(this);
+
+    //at this point in code, "this" refers to nothing. more specifically the Window object
+
+
+    // EXAMPLE TWO:
+    // --------------------------------------------------
+    // What is "this" going to print?
+
+    function myFunction() {
+      console.log(this);
+    }
+    myFunction();
+
+    //"this" is still referring to nothing bc there are not other objects other than Window
+
+    // EXAMPLE THREE (IMPORTANT):
+    // --------------------------------------------------
+    // What is "someObj.say()" going to print?
+
+    var someObj = {
+      name: "Red Hat",
+      say: function() {
+        console.log(this.name);
+      }
+    };
+    someObj.say();
+
+    //"this" refers to the object "someObj" and "this" object's name is "Red Hat"
+
+
+    // EXAMPLE FOUR (BONUS, TRICKY!):
+    // --------------------------------------------------
+    // What is "myObj.yell()" going to print? Why?
+
+    var myObj = {
+      name: "",
+      yell: function() {
+        this.name = "Star Powerup";
+
+        var changeName = function(newName) {
+          this.name = newName;
+        };
+        changeName("Blue Shell");
+        console.log(this);
+      }
+    };
+    myObj.yell();
+    //"this" refers to the myObj object in line 55 (where name is being assigned to Star Powerup)
+    //"this.name = newName" has lost visibility to myObj and this refers to "Window" now
+    //console.log will say: Object Name = "Star Powerup"
+
+
+    // EXAMPLE FIVE (BONUS, TRICKY!):
+    // --------------------------------------------------
+    // What is "myObj.yell()" going to print? Why?
+
+    var myObj = {
+      name: "",
+      yell: function() {
+
+        // This line is important!
+        var thisObject = this; //this line is the intermediary between nested function and yell
+
+        this.name = "Star Powerup";
+        var changeName = function(newName) {
+          thisObject.name = newName;
+        };
+        changeName("Blue Shell");
+        console.log(thisObject);
+      }
+    };
+    myObj.yell();
+    
+  </script>
+</body>
+</html>

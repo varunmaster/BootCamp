@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>lexicalScope</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    // Run this program. Then turn to the person next to you and answer the following questions:
+    // 1. What is the difference (in output) between Situation 1 and Situation 2?
+    // 2. Why are the alert messages different? (Hint: Look for syntax differences)
+
+    // Situation 1
+    // ------------------------------------------
+    var myVar1 = 1;
+
+    function a1() {
+      myVar1 = 5 - 3; //updating the GLOBAL variable
+      b1();
+      alert("Q1 | a: " + myVar1);
+    }
+
+    function b1() {
+      alert("Q1 | b: " + myVar1);
+    }
+    a1();
+    //alert("Q1 | b: 2") this is 2 bc when calling a1(), the value of myVar1 was updated to 2 and then b1's parent is a1 and a1 update the value to 2
+    //                   b1's parent has it updated to 2 and thats what the child sees.
+    //alert("Q1 | a: 2")
+
+
+    // Situation 2
+    // ------------------------------------------
+    var myVar2 = 1;
+
+    function a2() {
+      var myVar2 = 5 - 3; //this is a new LOCAL variable which is only visibile to a2
+      b2();
+      alert("Q2 | a: " + myVar2);
+    }
+
+    function b2() {
+      alert("Q2 | b: " + myVar2);
+    }
+    a2();
+    //alert("Q2 | b: 1") //b2 is not aware of the LOCAL variable myVar2
+    //alert("Q2 | b: 2") //this is calling the LOCAL variable
+
+  </script>
+</body>
+</html>
