@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .fancy{ /* we are setting a class*/
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="empty-div"></div>
+
+    <script text="text/javascript">
+        var targetDiv = document.getElementById("empty-div");
+
+        targetDiv.textContent = "Hello"; // this will display in the div thats in the html
+        targetDiv.textContent = "oh hello there"; // this will overwrite whatever is currently there -- this is an issue
+
+        var newDiv = document.createElement("div"); // we create a new element and set the value in the next line
+        newDiv.textContent = "oh hello there - this didn't overwrite whatever was already there";
+
+        targetDiv.appendChild(newDiv);
+
+        newDiv.setAttribute("class", "fancy"); //we are setting the class fancy to newDiv
+    </script>
+    
+</body>
+</html>

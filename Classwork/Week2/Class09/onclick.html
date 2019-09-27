@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trigger Clicked</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+</head>
+
+<body>
+    <h3 id="click-me">Click Me</h3>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#click-me").on("click",function(){ //this is the same as document.click in regualr javascript. "click" is reserved word and can be "keypress" or anything
+                alert("i was clicked");
+            });
+        });
+    </script>
+</body>
+
+</html>

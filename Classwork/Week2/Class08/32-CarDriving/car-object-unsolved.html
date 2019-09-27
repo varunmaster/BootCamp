@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>  
+
+    <p><h1>Press "d" to drive to work, "w" to drive around the world, "t" for tuneup, "h" for honk</h1></p>
+
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      document.onkeyup = function(e) {
+
+        if (e.key === "d") {
+          car.driveToWork();
+          reWriteStats();
+        }
+        else if (e.key === "w"){
+          car.driveAroundWorld();
+          reWriteStats();
+        }
+        else if(e.key === "t"){
+          car.getTuneUp();
+          reWriteStats();
+        }
+        else if(e.key === "h"){
+          car.honk();
+          reWriteStats();
+        }
+        else {
+          alert("YOU DIDN'T PRESS D, W, T, OR H");
+        }
+      }
+
+      function reWriteStats(){
+        console.log("Car: ", car.make);
+        console.log("Model: ", car.model);
+        console.log("Color: ", car.color);
+        console.log("Milage: ", car.mileage);
+        console.log("Is Working: ", car.isWorking);
+        console.log("--------------------");
+      }
+
+    </script>
+    
+  </body>
+</html>
