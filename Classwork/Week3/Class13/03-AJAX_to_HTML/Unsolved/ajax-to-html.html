@@ -33,26 +33,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     // The below code fills in the first row of the table
-    var movie = "Mr. Nobody";
-    var queryURL = "https://www.omdbapi.com/?t=" + movie.split(" ").join("+") + "&apikey=trilogy";
+    var movieList = ["Mr. Nobody", "Top Gun", "Space Jam"];
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(queryURL);
-      console.log(response.Title);
-      console.log(response.Year);
-      console.log(response.Actors);
-      // $(".table").find("tbody").append('<td>'+ response.Title+'</td>');
-      // $(".table").find("tbody").append('<td>'+ response.Year+'</td>');
-      // $(".table").find("tbody").append('<td>'+ response.Actors+'</td>');
-      putInHTML(response);
-      // Create and save a reference to new empty table row
-      // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
-      // Append the td elements to the new table row
-      // Append the table row to the tbody element
-    });
+    for (var i = 0; i < movieList.length; i++) {
+      var queryURL = "https://www.omdbapi.com/?t=" + movieList[i].split(" ").join("+") + "&apikey=trilogy";
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(queryURL);
+        console.log(response.Title);
+        console.log(response.Year);
+        console.log(response.Actors);
+        // $(".table").find("tbody").append('<td>'+ response.Title+'</td>');
+        // $(".table").find("tbody").append('<td>'+ response.Year+'</td>');
+        // $(".table").find("tbody").append('<td>'+ response.Actors+'</td>');
+        putInHTML(response);
+        // Create and save a reference to new empty table row
+        // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
+        // Append the td elements to the new table row
+        // Append the table row to the tbody element
+      });
+    }
 
     function putInHTML(property) {
       var tbody = $("tbody");
