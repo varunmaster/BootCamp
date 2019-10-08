@@ -77,7 +77,7 @@
 
     // Firebase is always watching for changes to the data.
     // When changes occurs it will print them to console and html
-    database.ref().on("value", function(snapshot) {
+    database.ref().on("value", function(snapshot) { //this function is called whenever there is a CHANGE in the VALUE. theoretically, it can be called a million times at given time
 
       // Print the initial data to the console.
       console.log(snapshot.val());
