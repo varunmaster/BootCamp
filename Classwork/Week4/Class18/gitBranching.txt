@@ -1,0 +1,12 @@
+* clone the branch to your local machine and then cd into that
+
+* create a branch for each member:
+    - git checkout -b nameOfBranch
+    - git status --> will show whatever branch youre working on
+
+* write your code
+
+* git add .
+* git commit -m "message"
+* git push origin nameOfBranch
+* go to github.com and create a new pull request and then merge into master
