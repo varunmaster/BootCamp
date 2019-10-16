@@ -1,4 +1,5 @@
 * clone the branch to your local machine and then cd into that
+git pull -b nameOfBranch
 
 * create a branch for each member:
     - git checkout -b nameOfBranch
