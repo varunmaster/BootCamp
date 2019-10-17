@@ -1,4 +1,4 @@
-switch (process.argv[2]) {
+switch ((process.argv[2]).toLower()) {
     case "add":
         console.log(parseFloat(process.argv[3]) + parseFloat(process.argv[4]));
         break;
