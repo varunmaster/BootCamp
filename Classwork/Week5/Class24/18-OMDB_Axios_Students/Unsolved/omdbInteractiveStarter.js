@@ -1,3 +1,5 @@
+var axios = require("axios");
+
 // INSTRUCTIONS:
 // ---------------------------------------------------------------------------------------------------------
 // Level 1:
@@ -12,7 +14,7 @@
 
 
 // Grab or assemble the movie name and store it in a variable called "movieName"
-var movieName = "";
+var movieName = process.argv[2];
 // ...
 
 
@@ -26,6 +28,28 @@ console.log(queryUrl);
 
 // Then create a request with axios to the queryUrl
 // ...
+axios
+.get(queryUrl)
+.then((res) => {
+    console.log(res.data.Year);
+})
+.catch((err) => {
+    if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an object that comes back with details pertaining to the error that occurred.
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log("Error", error.message);
+      }
+      console.log(error.config);
+});
 
 // If the request with axios is successful
 // ...
