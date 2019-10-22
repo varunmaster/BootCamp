@@ -26,7 +26,7 @@ var Player = function (name, position, offense, defense) {
             console.log("decreased defense");
         }
     };
-}
+};
 
 Player.prototype.printStats = function () {
     console.log("Name: " + this.name + "\nPosition: " + this.position +
@@ -47,9 +47,9 @@ var askQuestions = function () {
                 message: "What is your current position?"
             }, {
                 name: "offense",
-                message: "set offense",
+                message: "set offense [1-10]:",
                 validate: function (value) {
-                    if (isNaN(value) && parseInt(value) && parseInt(value) <= 10) {
+                    if (isNaN(value) === false && parseInt(value) && parseInt(value) <= 10) {
                         return true;
                     }
                     else {
@@ -58,9 +58,9 @@ var askQuestions = function () {
                 }
             }, {
                 name: "defense",
-                message: "set defense",
+                message: "set defense [1-10]:",
                 validate: function (value) {
-                    if (isNaN(value) && parseInt(value) && parseInt(value) <= 10) {
+                    if (isNaN(value) === false && parseInt(value) && parseInt(value) <= 10) {
                         return true;
                     }
                     else {
@@ -74,14 +74,14 @@ var askQuestions = function () {
             var newPlayer = new Player(answers.name, answers.position, parseInt(answers.offense), parseInt(answers.defense));
 
             newPlayer.printStats();
+            if (starters.length < 2) {
+                starters.push(newPlayer);
+            } else {
+                subs.push(newPlayer);
+            }
+            count++;
+            askQuestions();
         });
-        if (starters.length < 2) {
-            starters.push(newPlayer);
-        } else {
-            subs.push(newPlayer);
-        }
-        count++;
-        askQuestions();
     }
 };
 
