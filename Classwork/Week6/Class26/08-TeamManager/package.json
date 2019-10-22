@@ -1,0 +1,14 @@
+{
+  "name": "08-teammanager",
+  "version": "1.0.0",
+  "description": "Class Activity",
+  "main": "teamManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Varun Master",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.0.0"
+  }
+}

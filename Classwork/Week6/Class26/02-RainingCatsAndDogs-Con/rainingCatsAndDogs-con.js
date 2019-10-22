@@ -4,14 +4,14 @@ function Animal(raining, noise) {
   this.raining = raining;
   this.noise = noise;
   this.makeNoise = function() {
-    if (this.raining === true) {
+    if (this.raining) {
       console.log(this.noise);
     }
   };
 }
 
 // sets the variables "dogs" and "cats" to be animal objects and initializes them with raining and noise properties
-var dogs = new Animal(true, "Woof!");
+var dogs = new Animal(true, "Woof!"); //without the 'new' keyword, it will become a global variable and you dont want that
 var cats = new Animal(false, "Meow!");
 
 // calling dogs and cats makeNoise methods
