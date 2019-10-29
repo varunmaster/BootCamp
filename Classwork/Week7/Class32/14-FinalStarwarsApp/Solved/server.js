@@ -1,7 +1,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var path = require("path");
+var path = require("path"); //part of node standard library
 
 // Sets up the Express App
 // =============================================================
@@ -9,7 +9,8 @@ var app = express();
 var PORT = 3000;
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+//use these two things to parse the user data from the POST method such as app.post below
+app.use(express.urlencoded({ extended: true })); //this is boiler plate info and should just be pasted from other server.js files
 app.use(express.json());
 
 // Star Wars Characters (DATA)
@@ -43,7 +44,7 @@ var characters = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "view.html")); //we are sending the 'view' html file using the sendFile() method instead of the fs.readFile() method
 });
 
 app.get("/add", function(req, res) {
@@ -56,8 +57,8 @@ app.get("/api/characters", function(req, res) {
 });
 
 // Displays a single character, or returns false
-app.get("/api/characters/:character", function(req, res) {
-  var chosen = req.params.character;
+app.get("/api/characters/:character", function(req, res) { 
+  var chosen = req.params.character; //there is also req.query() which is when user puts the url as 'something.com/api/?name=varun&age=24' and then it queries
 
   console.log(chosen);
 
@@ -78,7 +79,8 @@ app.post("/api/characters", function(req, res) {
 
   // Using a RegEx Pattern to remove spaces from newCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase(); //routeName is being ADDED. if routeName is already there then we overwrite it otherwise we add it
+  //space that matches once or more and globally (anywhere in the entire string)
 
   console.log(newCharacter);
 

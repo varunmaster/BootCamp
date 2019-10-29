@@ -64,6 +64,7 @@
 
   <script type="text/javascript">
     // Question: What does this code do?
+    //this is the ID of the button
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
       var newCharacter = {
@@ -74,8 +75,14 @@
       };
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
-        .then(function(data) {
+      $.post("/api/characters", newCharacter) //we are posting the data (newCharacter) from this html page to our post method in server.js
+      /*
+        the full path is:
+          * We call the post method endpoint of /api/characters
+          * the server.js file then goes to the app.use(express.xxxxx) which makes it an object
+          * then it goes to the app.post(xxxxx) and comes in as req.body
+      */
+        .then(function(data) { //after the server.js file is done, it will call back to this function and we will log and alert it
           console.log("add.html", data);
           alert("Adding character...");
         });
