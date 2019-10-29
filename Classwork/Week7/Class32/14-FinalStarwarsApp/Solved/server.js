@@ -59,7 +59,7 @@ app.get("/api/characters", function(req, res) {
 // Displays a single character, or returns false
 app.get("/api/characters/:character", function(req, res) { 
   var chosen = req.params.character; //there is also req.query() which is when user puts the url as 'something.com/api/?name=varun&age=24' and then it queries
-
+  //console.log(req)
   console.log(chosen);
 
   for (var i = 0; i < characters.length; i++) {
