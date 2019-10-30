@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hot Restaurants</title>
-        <!-- Latest compiled and minified CSS & JS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </head>
 
-    <body>
-        <!-- Main Jumbotron-->
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Hot Restaurants</h1>
-                <h3>Make Your Reservation</h3>
-                <hr>
-                <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3><strong>Make a Reservation: </strong></h3>
-                        </div>
-                        <div class="card-body">
-                            <!-- Table FORM-->
-                            <form>
-                                <div class="form-group">
-                                    <label for="nameLabel">Name</label>
-                                    <input type="name" class="form-control" id="nameReserve"  placeholder="Enter Your Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phoneLabel">Phone Number</label>
-                                    <input type="phone" class="form-control" id="phoneReserve"  placeholder="Enter Your Phone Number">
-                                </div>
-                                <div class="form-group">
-                                    <label for="emailLabel">Email</label>
-                                    <input type="email" class="form-control" id="emailReserve"  placeholder="Enter Your Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="uniqueIDLabel">Unique ID</label>
-                                    <input type="uniqueID" class="form-control" id="uniqueReserve"  placeholder="Enter Your Unique ID">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Restaurants</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Main Jumbotron-->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hot Restaurants</h1>
+            <h3>Make Your Reservation</h3>
+            <hr>
+            <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><strong>Make a Reservation: </strong></h3>
                     </div>
-                </div>  
+                    <div class="card-body">
+                        <!-- Table FORM-->
+                        <form>
+                            <div class="form-group">
+                                <label for="nameLabel">Name</label>
+                                <input type="name" class="form-control" id="nameReserve" placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneLabel">Phone Number</label>
+                                <input type="phone" class="form-control" id="phoneReserve"
+                                    placeholder="Enter Your Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailLabel">Email</label>
+                                <input type="email" class="form-control" id="emailReserve"
+                                    placeholder="Enter Your Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="uniqueIDLabel">Unique ID</label>
+                                <input type="uniqueID" class="form-control" id="uniqueReserve"
+                                    placeholder="Enter Your Unique ID">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="addTableBtn">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+    <script>
+        $("#addTableBtn").on("click", function (event) {
+            event.preventDefault();
+            var newTable = {
+                name: $("#nameReserve").val().trim(),
+                phoneNumber: $("#phoneReserve").val().trim(),
+                email: $("#emailReserve").val().trim(),
+                unqiueID: $("#uniqueReserve").val().trim(),
+            };
+            // Question: What does this code do??
+            $.post("/api/reservations", newTable)
+                .then(function (data) {
+                    console.log("this is reservation", data);
+                    alert("Adding Your Reservation...");
+            });
+        });
+    </script>
+</body>
+
 </html>

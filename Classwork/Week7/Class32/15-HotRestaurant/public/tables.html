@@ -26,15 +26,17 @@
                             <h3><strong>Current Reservations</strong></h3>
                         </div>
                         <div class="card-body">
-                            <!-- Table input-->
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h5 class="table-title">Table</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div> 
+                                    <h5 class="table-title"></h5>
+                                    <p class="card-text">
+                                        <div id="phoneNum"></div>
+                                        <div id="email"></div>
+                                        <div id="uniqueID"></div>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <br>
                     </div>
                 </div>
             </div>
@@ -45,18 +47,57 @@
                 <div class="card-header">
                     <h3><strong>Waiting List</strong></h3>
                 </div>
-                <div class="card-body">
-                    <form method="POST" role="form">
-                    <br>
-                    <!-- Table input-->
+                <div class="card-body-1">
                     <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="table-title">Table</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card-body-1">
+                            <h5 class="table-title-1"></h5>
+                            <p class="card-text">
+                                <div id="phoneNum-1"></div>
+                                <div id="email-1"></div>
+                                <div id="uniqueID-1"></div>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            $.get("/api/tableData", function(data) {
+                console.log(data);
+                for (var i=0; i<data.length; i++) {
+                    var newCard = $("<div>");
+                    newCard.append("<h5 class='table-title'>" + data[i].name + "</h5>");
+                    var newCardText = $("<p class='card-text'>");
+                    var phoneNumText = $("div class='phoneNum'>");
+                    phoneNumText = data[i].phoneNumber;
+                    var emailText = $("div class='email'>");
+                    emailText = data[i].email;
+                    var uniqueText = $("div class='uniqueID'>");
+                    uniqueText = data[i].uniqueID;
+
+                    newCardText.append(phoneNumText).append(emailText).append(uniqueText);
+                    newCard.append(newCardText)
+                    $(".card-body").prepend(newCard);
+                }
+            });
+            $.get("/api/waitinglistData", function(data) {
+                console.log(data);
+                for (var i=0; i<data.length; i++) {
+                    var newCard = $("<div>");
+                    newCard.append("<h5 class='table-title-1'>" + data[i].name + "</h5>");
+                    var newCardText = $("<p class='card-text'>");
+                    var phoneNumText = $("div class='phoneNum-1'>");
+                    phoneNumText = data[i].phoneNumber;
+                    var emailText = $("div class='email-1'>");
+                    emailText = data[i].email;
+                    var uniqueText = $("div class='uniqueID-1'>");
+                    uniqueText = data[i].uniqueID;
+
+                    newCardText.append(phoneNumText).append(emailText).append(uniqueText);
+                    newCard.append(newCardText)
+                    $(".card-body-1").prepend(newCard);
+                }
+            });
+        </script>
     </body>
 </html>
