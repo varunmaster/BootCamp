@@ -15,14 +15,14 @@ module.exports = function (app) {
   app.get("/api/all", (req, res) => {
     connection.query("select * from chirps", (err, result) => {
       if (err) res.send(500).end();
-      res.send(result);
+      res.json(result);
     });
   });
 
 
   // Add a chirp
   app.post("/api/new", (req, res) => {
-    connection.query("INSERT INTO chirps (author, chirp, created_at) VALUES (?, ?, ?)",[req.body.author, req.body.body, req.body.created_at], (err, result) => {
+    connection.query("INSERT INTO chirps (author, chirp, created_at) VALUES (?, ?, ?)", [req.body.author, req.body.body, req.body.created_at], (err, result) => {
       if (err) {
         res.send(500).end();
       }
