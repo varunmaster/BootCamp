@@ -100,9 +100,11 @@ app.get("/find/:id", (req, res) => {
 // ================================================================
 app.post("/update/:id", (req, res) => {
   var id = req.params.id;
-  db.notes.update({ "_id": id }, {
-    title: req.body.title,
-    note: req.body.note
+  db.notes.update({ "_id": mongojs.ObjectId(id) }, {
+    $set: {
+      title: req.body.title,
+      note: req.body.note
+    }
   }, (err, data) => {
     if (err) console.log(err);
     else {
