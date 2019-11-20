@@ -8,6 +8,8 @@ const jaime = {
   parents: ["Tywin Lannister", "Joanna Lannister"]
 };
 
+const {name, parents, ...rest} = arya //This is basically creating a variable called 'name' and 'parents' and 'rest' and getting the values of arya.name and arya.parents
+
 // In the past, if we wanted to pull off an object's property we'd have to do something like this:
 
 const aryaName = arya.name;
